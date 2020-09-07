@@ -1,0 +1,2047 @@
+/* ----all.css---- */
+*{
+  box-sizing: border-box;
+}
+
+@mixin sp {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+html{
+  font-size: 62.5% * 3/4;
+  background: #222;
+
+  @include sp {
+    font-size: 62.5% * 1/2;
+  }
+}
+
+body{
+  position: relative;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+section{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100vh;
+
+  &.active{
+    z-index: 100;
+  }
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+h1{
+  color: #fff;
+  font: {
+    size: 10rem;
+    family: ta-houdate-m500, sans-serif;
+  }
+
+}
+
+h2{
+  color: #fff;
+  font: {
+    size: 11rem;
+    family: ta-houdate-m500, sans-serif;
+  }
+
+  @include sp{
+    font-size: 10rem;
+  }
+}
+
+h3{
+  color: #111;
+  font: {
+    size: 5rem;
+    family: ta-houdate-m500, sans-serif;
+  }
+  display: inline-block;
+}
+
+p{
+  color: #fff;
+  font: {
+    size: 16px;
+    family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  }
+  line-height: 24px;
+  letter-spacing: .3px;
+}
+
+.return-top{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: fixed;
+  right: 80px;
+  bottom: 50px;
+  z-index: 50;
+
+  @include sp{
+    width: 150px;
+    height: 150px;
+    right: -30px;
+    bottom: -40px;
+  }
+
+  a{
+    color: #fff;
+    font: {
+      family: ta-candy, sans-serif;
+      size: 50px;
+      weight: 400;
+    }
+    line-height: 180px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+
+    @include sp {
+      font-size: 35px;
+      line-height: 120px;
+      width: 85%;
+      margin-right: 15%;
+    }
+  }
+}
+
+
+$top_col : #E91D7E;
+$about_col : #FF8006;
+$skill_col : #CFE330;
+$contact_col : #05FDFF;
+/* ----all.css---- */
+
+
+
+/* ----intro.css---- */
+#introduce{
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  z-index: 2000;
+
+  .intro-heading{
+    width: 35%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include sp {
+      top: 20%;
+      width: 80%;
+    }
+  }
+}
+
+.intro-btn-wrapper{
+  height: 280px;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+
+  .intro-btn{
+    width: 180px;
+    height: 180px;
+    background: #f5f5f5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    cursor: pointer;
+
+    .btn-inner{
+      transform: rotate(-45deg);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      #btn-switch{
+        width: 60px;
+      }
+
+      span{
+        font-size: 15px;
+        margin-top: 16px;
+      }
+    }
+  }
+
+  @keyframes smallArrowR{
+    0% {
+      transform: translate(210px,-50%) rotate(45deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(220px,-50%) rotate(45deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(210px,-50%) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes smallArrowL{
+    0% {
+      transform: translate(-210px,-50%) rotate(-135deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(-220px,-50%) rotate(-135deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(-210px,-50%) rotate(-135deg);
+      opacity: 0;
+    }
+  }
+
+  .small-arrow{
+    width: 20px;
+    height: 20px;
+    border: {
+      top: .5px solid #fff;
+      right: .5px solid #fff;
+    }
+    position: absolute;
+
+    &.right{
+      top: 50%;
+      right: 50%;
+      transform: translate(210px,-50%) rotate(45deg);
+      animation: smallArrowR 1.5s ease-out infinite;
+    }
+
+    &.left{
+      top: 50%;
+      left: 50%;
+      transform: translate(-210px,-50%) rotate(-135deg);
+      animation: smallArrowL 1.5s ease-out infinite;
+    }
+  }
+
+  @keyframes largeArrowR{
+    0% {
+      transform: translate(180px,-50%) rotate(45deg);
+      opacity: 1;
+    }
+
+    10% {
+      transform: translate(180px,-50%) rotate(45deg);
+      opacity: 1;
+    }
+
+    70% {
+      transform: translate(190px,-50%) rotate(45deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(190px,-50%) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes largeArrowL{
+    0% {
+      transform: translate(-180px,-50%) rotate(-135deg);
+      opacity: 1;
+    }
+
+    10% {
+      transform: translate(-180px,-50%) rotate(-135deg);
+      opacity: 1;
+    }
+
+    70% {
+      transform: translate(-190px,-50%) rotate(-135deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(-190px,-50%) rotate(-135deg);
+      opacity: 0;
+    }
+  }
+
+  .large-arrow{
+    width: 80px;
+    height: 80px;
+    border: {
+      top: 1px solid #fff;
+      right: 1px solid #fff;
+    }
+    position: absolute;
+
+    &.right{
+      top: 50%;
+      right: 50%;
+      transform: translate(180px,-50%) rotate(45deg);
+      animation: largeArrowR 1.5s ease-out infinite;
+    }
+
+    &.left{
+      top: 50%;
+      left: 50%;
+      transform: translate(-180px,-50%) rotate(-135deg);
+      animation: largeArrowL 1.5s ease-out infinite;
+    }
+  }
+}
+/* ----intro.css---- */
+
+
+
+/* ----nav.css---- */
+nav{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+
+  @include sp {
+    right: 0;
+    transform: translate(30%,-50%);
+  }
+
+  @keyframes rotateDec{
+    0% {
+      transform: rotate(0);
+    }
+
+    50% {
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  span{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: #afafaf;
+    border: .5px solid #afafaf;
+    border-radius: 50%;
+    position: relative;
+    z-index: 100;
+    transition: .5s;
+    cursor: pointer;
+
+    &.active{
+      background: #333;
+      border: .5px solid #ff8006;
+      transition: .8s;
+      animation: rotateDec 6s ease infinite forwards;
+      pointer-events: none;
+
+      & > div{
+        left: 3.5px;
+        top: -23px;
+        transition: all 1s;
+        opacity: 1;
+
+        & > div{
+          left: 3px;
+          top: 8px;
+          opacity: 1;
+        }
+      }
+
+
+      .dec-L_2{
+        transform: rotate(90deg);
+        transform-origin: 4px 30.5px;
+      }
+
+      .dec-L_3{
+        transform: rotate(180deg);
+        transform-origin: 4px 30.5px;
+      }
+
+      .dec-L_4{
+        transform: rotate(270deg);
+        transform-origin: 4px 30.5px;
+      }
+
+      .dec-S_1{
+        transform: rotate(23deg);
+        transform-origin: 1px 22.5px;
+        transition: 1s .5s;
+      }
+
+      .dec-S_2{
+        transform: rotate(45deg);
+        transform-origin: 1px 22.5px;
+        transition: 1s .5s;
+      }
+
+      .dec-S_3{
+        transform: rotate(67deg);
+        transform-origin: 1px 22.5px;
+        transition: 1s .5s;
+      }
+    }
+
+    & > div{
+      width: 8px;
+      height: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      left: 3.5px;
+      top: 0px;
+      opacity: 0;
+      transform: none;
+
+      & > div{
+        width: 2px;
+        height: 2px;
+        display: inline-block;
+        border-radius: 50%;
+        background: #fff;
+        position: absolute;
+        left: 3px;
+        top: 8px;
+        opacity: 0;
+        transform: none;
+      }
+    }
+  }
+
+  .nav-top > div{
+    background: $top_col;
+  }
+
+  .nav-about > div{
+    background: $about_col;
+  }
+
+  .nav-skill > div{
+    background: $skill_col;
+  }
+
+  .nav-contact > div{
+    background: $contact_col;
+  }
+}
+/* ----nav.css---- */
+
+
+
+/* ----top.css---- */
+$margin : 10px;
+
+.box{
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  left: -150px;
+  transition: .2s;
+
+  .active &{
+    left: 0;
+    transition: .5s ease-out;
+  }
+
+  @include sp {
+    width: 10vw;
+    height: 16vw;
+    top: -16vw;
+    left: 10px;
+
+    .active &{
+      top: 0;
+      left: 10px;
+      transition: .5s ease-out;
+    }
+  }
+}
+
+
+#top{
+  margin-bottom: $margin;
+
+  .box{
+    background: $top_col;
+  }
+}
+
+
+
+#infomation{
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 64%;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-65%);
+  transition: .5s;
+
+  @include sp {
+    top: 28%;
+    left: 5%;
+    transform: translateY(-10%);
+  }
+
+  .active &{
+    opacity: 1;
+    transform: translateY(-50%);
+    transition: .8s .3s;
+
+    @include sp {
+      transform: none;
+    }
+  }
+
+  h2{
+    font-size: 6.5rem;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    text-shadow: 5px 5px 0 $top_col;
+  }
+}
+
+.infomation-wrapper{
+  display: flex;
+
+  #arrow{
+    height: 300px;
+  }
+
+  #infomation-content{
+    height: 200px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    li{
+      color: #fff;
+      font-size: 14px;
+      margin-top: 45px;
+    }
+  }
+}
+
+
+$pathSize : 150px;
+$pathCol : #fcfcfd;
+
+#path{
+  width: 80vh;
+  height: 80vh;
+  position: fixed;
+  top: 10vh;
+  left: 35vw;
+  transform: translateX(1000px) scale(.5) rotate(45deg);
+  transform-origin: center;
+
+  @include sp {
+    width: 200px;
+    height: 100px;
+    top: 30px;
+    left: calc(50px + 10vw)
+  }
+
+
+  @keyframes pathIn{
+    0% {
+      transform: translateX(1000px) scale(.5) rotate(45deg);
+    }
+
+    80% {
+      transform: translateX(0) scale(.5) rotate(45deg);
+    }
+
+    100% {
+      transform: none;
+    }
+  }
+
+  @keyframes pathOut{
+    0% {
+      transform: none;
+    }
+
+    25% {
+      transform: translateX(0) scale(.5) rotate(-135deg);
+    }
+
+    100% {
+      transform: translateX(1000px) scale(.5) rotate(-135deg);
+    }
+  }
+
+  .active &{
+    animation: pathIn 1.5s .4s forwards !important;
+
+    @include sp {
+      animation: none !important;
+      transform: none;
+      // transition: .8s;
+    }
+  }
+
+  .upper{
+    width: 640px;
+    margin: 0 auto;
+    display: flex;
+
+    .logo-wrapper{
+      width: 300px;
+      height: 300px;
+      margin-left: 10px;
+      position: relative;
+
+      @include sp {
+        width: 200px;
+        height: 100px;
+        margin: 0;
+      }
+
+      #top-logo{
+        width: 400px;
+        position: absolute;
+        left: 5px;
+        bottom: 20px;
+        opacity: 0;
+        transform: translateX(10px);
+
+        @include sp {
+          width: 200px;
+          top: 0;
+          left: 0;
+          bottom: 0;
+        }
+
+        .active &{
+          opacity: 1;
+          transform: none;
+          transition: .3s 2.2s;
+
+          @include sp {
+            transition: .8s 0s;
+          }
+        }
+      }
+    }
+  }
+
+  .lower{
+    width: 640px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+
+  .anker{
+    position: relative;
+    cursor: pointer;
+
+    .active &{
+      margin: 10px;
+      transition: .2s 1.9s;
+    }
+
+    h3{
+      opacity: 0;
+      position: absolute;
+      transform: translateX(10px);
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .3s 2.2s;
+      }
+    }
+
+    @include sp {
+      display: none;
+    }
+  }
+}
+
+
+#to-about{
+  width: $pathSize * 2;
+  height: $pathSize * 2;
+  margin: {
+    top: 20px;
+    left: 20px;
+    bottom: 0;
+    right: 0;
+  }
+  border: {
+    top: $pathSize solid transparent;
+    right: $pathSize solid $pathCol;
+    bottom: $pathSize solid $pathCol;
+    left: $pathSize solid transparent;
+  }
+
+  h3{
+    top: 10px;
+    left: 5px;
+
+    span{
+      color: $about_col;
+    }
+  }
+}
+
+#to-skill{
+  width: $pathSize * 2;
+  height: $pathSize * 2;
+  margin: {
+    top: 0;
+    left: 20px;
+    bottom: 20px;
+    right: 0;
+  }
+  border: {
+    top: $pathSize solid $pathCol;
+    right: $pathSize solid $pathCol;
+    bottom: $pathSize solid transparent;
+    left: $pathSize solid transparent;
+  }
+
+  h3{
+    left: 10px;
+    bottom: 40px;
+
+   span{
+    color: $skill_col;
+   }
+  }
+}
+
+#to-contact{
+  width: $pathSize * 2;
+  height: $pathSize * 2;
+  margin: {
+    top: 0;
+    left: 0;
+    bottom: 20px;
+    right: 20px;
+  }
+  border:{
+    top: $pathSize solid $pathCol;
+    right: $pathSize solid transparent;
+    bottom: $pathSize solid transparent;
+    left: $pathSize solid $pathCol;
+  }
+
+  h3{
+    right: -40px;
+    bottom: 40px;
+
+    span{
+      color: $contact_col;
+    }
+  }
+}
+/* ----top.css---- */
+
+
+
+/* ----about.css---- */
+#about{
+  margin: $margin 0;
+
+  h2{
+    position: fixed;
+    top: 100px;
+    right: 150px;
+    text-shadow: 5px 5px 0 $about_col;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: .5s;
+
+    @include sp {
+      top: 30px;
+      left: calc(50px + 10vw)
+    }
+  }
+
+  &.active h2{
+    opacity: 1;
+    transform: none;
+    transition: 1s .9s;
+  }
+
+  p{
+    width: 60vh;
+    height: 30vh;
+    display: inline-block;
+    position: fixed;
+    top: 300px;
+    left: calc(100vh + 110px);
+    opacity: 0;
+    transform: translateX(100px);
+    transition: .5s;
+    overflow-y: scroll;
+
+    @include sp {
+      width: 90vw;
+      height: 20vh;
+      top: auto;
+      left: 10px;
+      bottom: 5%;
+    }
+  }
+
+  &.active p{
+    opacity: 1;
+    transform: none;
+    transition: 1s .7s;
+  }
+
+  .box{
+    background: $about_col;
+  }
+}
+
+.about-box{
+  width: 150px;
+  height: 150px;
+  background: $about_col;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.photo-wrapper{
+  width: 100vh;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 90px;
+
+  @include sp {
+    width: 85vw;
+    height: 85vw;
+    top: 15%;
+    left: 0;
+  }
+
+  @keyframes photoIn_1{
+    0% {
+      opacity: 1;
+      transform: translate(-1000px,-1000px);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translate(-50%,-50%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  @keyframes photoIn_2{
+    0% {
+      opacity: 1;
+      transform: translate(1000px,1000px);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translate(-50%,-50%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  @keyframes photoOut{
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .myself{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    transition: .5s;
+
+    .active &{
+      opacity: 1;
+      transition: 1.5s 1.5s;
+    }
+
+    &_l{
+      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      transform: translate(-1000px,-1000px);
+      z-index: 50;
+
+      .active &{
+        animation: photoIn_1 3s forwards;
+      }
+    }
+
+    &_r{
+      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      transform: translate(1000px,1000px);
+      z-index: 50;
+
+      .active &{
+        animation: photoIn_2 3s forwards;
+      }
+    }
+  }
+
+  .name{
+    width: 400px;
+    height: 125px;
+    position: absolute;
+    bottom: 60px;
+    left: 500px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: .5s;
+
+    @include sp {
+      width: 200px;
+      height: 50px;
+      left: 40px;
+      bottom: -20px;
+    }
+
+    .active &{
+      opacity: 1;
+      transform: none;
+      transition: .5s 2.5s;
+    }
+
+    h3{
+      color: #fff;
+      font: {
+        family: ta-candy, sans-serif;
+        weight: 400;
+        style: normal;
+      }
+      position: absolute;
+      top: 45px;
+      left: 150px;
+      white-space: nowrap;
+
+      span{
+        color: $about_col;
+      }
+
+      @include sp {
+        top: 0;
+        left: 0;
+      }
+    }
+
+    h4{
+      color: #fff;
+      font: {
+        family: ta-candy, sans-serif;
+        weight: 400;
+        style: normal;
+      }
+      position: absolute;
+      top: 95px;
+      left: 120px;
+
+      @include sp {
+        top: 32px;
+        left: 15px;
+      }
+    }
+  }
+
+  svg{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include sp {
+      display: none;
+    }
+  }
+}
+/* ----about.css---- */
+
+
+
+/* ----skill.css---- */
+#skill{
+  margin: $margin 0;
+
+  .box{
+    background: $skill_col;
+  }
+
+  h2{
+    position: fixed;
+    top: 100px;
+    right: 150px;
+    text-shadow: 5px 5px 0 $skill_col;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: .5s;
+
+    @include sp {
+      top: 30px;
+      left: calc(50px + 10vw)
+    }
+  }
+
+  &.active h2{
+    opacity: 1;
+    transform: none;
+    transition: 1s .9s;
+  }
+}
+
+#portfolio{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%,-35%);
+
+  @include sp {
+    transform: translate(-48%,-50%) scale(.5);
+  }
+
+  .hexagon-wrapper{
+    width: 800px;
+    overflow: visible;
+
+    .hex-top{
+      fill: $skill_col;
+      stroke-width: 0;
+      opacity: 0;
+      transform: translate(80 * .5px,80 * .866px);
+      transition: .2s .4s;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .3s .9s;
+      }
+    }
+
+    .hex-left{
+      opacity: 0;
+      transform: translateX(80px);
+      transition: .2s .4s;
+
+      polygon:first-of-type{
+        fill: #444;
+        stroke-width: 0;
+      }
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .3s .9s;
+      }
+    }
+
+    .object-frame{
+      opacity: 0;
+      transform: scale(.9);
+      transform-origin: center;
+      transition: .5s;
+
+      .active &{
+        opacity: 1;
+        transition: .1s;
+      }
+    }
+
+    .right-object{
+      opacity: 0;
+      transform: translateX(-10px) scale(.9);
+      transform-origin: center;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .5s 1.2s;
+      }
+    }
+
+    .left-object{
+      opacity: 0;
+      transform: translateX(10px) scale(.9);
+      transform-origin: center;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .5s 1.2s;
+      }
+
+    }
+
+    .small-object_1{
+      fill: $skill_col;
+      stroke-width: 0;
+      opacity: 0;
+      transform: rotate(-15deg);
+      transform-origin: 20% 40%;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .2s 1.8s;
+      }
+    }
+
+    .small-object_2{
+      fill: $skill_col;
+      stroke-width: 0;
+      opacity: 0;
+      transform: rotate(-15deg);
+      transform-origin: 20% 40%;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .2s 2.0s;
+      }
+    }
+
+    .small-object_3{
+      stroke-width: 0;
+      opacity: 0;
+      transform: rotate(-15deg);
+      transform-origin: 20% 40%;
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .2s 2.2s;
+      }
+    }
+
+    .under-line{
+      opacity: 0;
+      transform: translateX(-30px);
+      fill: #fff;
+      stroke: #fff;
+
+      @include sp {
+        display: none;
+      }
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .5s 2.5s;
+      }
+
+      &.hover{
+        fill: $skill_col;
+        stroke: $skill_col;
+        transition: 1s 0s !important;
+      }
+    }
+
+    .display{
+      opacity: 0;
+      transform: translateX(-30px);
+
+      @include sp {
+        display: none;
+      }
+
+      .active &{
+        opacity: 1;
+        transform: none;
+        transition: .5s 2.65s;
+      }
+    }
+  }
+
+  .hexagon {
+    width: 330px;
+    margin: 23px auto;
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 162px;
+    opacity: 0;
+    transform: none;
+    transition: .2s .6s;
+    overflow: hidden;
+
+    .active &{
+      opacity: 1;
+      transform: rotate(-90deg);
+      transition: .8s;
+    }
+
+    &::before{
+      display: block;
+      padding-top: 86.602540378%;
+      content: '';
+    }
+
+    &__inner-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transform: rotate(60deg);
+    }
+
+    &__inner-2 {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transform: rotate(60deg);
+    }
+
+    &__inner-3 {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-120deg);
+    }
+  }
+
+  .hexagon__inner-image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: #555;
+    position: relative;
+    transform: rotate(30deg) scale(1.18);
+
+    li{
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%,-50%) rotate(60deg);
+      transition: .3s;
+
+      &.selected{
+        opacity: 1;
+        transition: .5s;
+        z-index: 10;
+      }
+
+      img{
+        width: 200px;
+      }
+
+      &:nth-of-type(6) img{
+        transform: scale(2.5);
+      }
+
+      a{
+        width: 300px;
+        height: 330px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0.85);
+      }
+    }
+  }
+
+  .portfolio-link{
+    color: #fff;
+    font:{
+      size: 5.3rem;
+      family: ta-candy, sans-serif;
+    }
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    top: 155px;
+    right: -50px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: .2s;
+
+    @include sp {
+      font-size: 10rem;
+      text-decoration: underline;
+      top: auto;
+      left: 50vw;
+      bottom: 50px;
+      right: auto;
+    }
+
+    .active &{
+      opacity: 1;
+      transform: none;
+      transition: .5s 2.5s;
+    }
+
+
+    span{
+      color: $skill_col
+    }
+  }
+
+  .display_inner{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: .2s;
+
+    @include sp {
+      bottom: -150px;
+      left: 80vw;
+      right: auto;
+      transform: translateX(-30px) scale(1.5);
+    }
+
+    .active &{
+      opacity: 1;
+      transform: none;
+      transition: .5s 2.65s;
+
+      @include sp {
+        transform: scale(1.5);
+      }
+    }
+
+    span{
+      color: #111;
+      font: {
+        family: ta-candy, sans-serif;
+        size: 40px;
+      }
+      width: 90px;
+      height: 45px;
+      text-align: center;
+      display: inline-block;
+      position: absolute;
+
+
+      &:nth-of-type(1){
+        top: 15px;
+        right: 40px;
+      }
+
+      &:nth-of-type(2){
+        width: 60px;
+        height: 1px;
+        background: #070707;
+        right: 30px;
+        bottom: 50px;
+        transform: rotate(-45deg);
+
+        @include sp {
+          background: #fff;
+        }
+      }
+
+      &:nth-of-type(3){
+        right: 8px;
+        bottom: 8px;
+        text-align: right;
+      }
+
+      @include sp {
+        color: #fff;
+      }
+    }
+
+    .portfolio-arrow{
+      width: 140px;
+      height: 60px;
+      border: {
+        top: 30px solid transparent;
+        bottom: 30px solid transparent;
+      }
+      position: absolute;
+      cursor: pointer;
+
+      &#index-next{
+        border: {
+          right: 70px solid transparent;
+          left: 70px solid #fff;
+        }
+        top: 5px;
+        right: -135%;
+      }
+
+
+      &#index-prev{
+        border: {
+          right: 70px solid #fff;
+          left: 70px solid transparent;
+        }
+        left: -135%;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+
+/*---- portfolio ---- */
+#portfolio-ditail{
+  width: 100vw;
+
+  h1{
+    text-align: right;
+    padding: 50px 100px 90px;
+
+    @include sp {
+      padding: 50px 5px 90px;
+    }
+
+    span{
+      color: $skill_col;
+    }
+  }
+
+  .portfolio-content{
+    width: 75%;
+    margin: 0 auto 300px;
+
+    @include sp {
+      width: 90%;
+      margin-bottom: 200px;
+    }
+
+    .part-title{
+      display: flex;
+      flex-direction: column;
+
+      h3{
+        font: {
+          size: 3.6rem;
+          family: ta-candy;
+        }
+        color: #fff;
+        width: 260px;
+        display: inline-block;
+        text-align: center;
+      }
+
+      img{
+        width: 280px;
+        margin-top: -18px;
+      }
+    }
+
+    > ul{
+      > li{
+        margin: 50px 0 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        @include sp {
+          flex-direction: column;
+        }
+
+        ul{
+          width: 600px;
+          margin-bottom: 30px;
+
+          @include sp {
+            width: 100%;
+          }
+
+          li{
+            display: flex;
+          }
+        }
+      }
+
+      &#design-skills > li:nth-of-type(2) img{
+        width: 500px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      h5{
+        color: #fff;
+        font: {
+          size: 16px;
+          family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+        }
+        margin-right: 5px;
+        white-space: nowrap;
+      }
+
+    }
+
+    .hexagon-wrapper {
+      width: 400px;
+      height: 350px;
+      position: relative;
+
+      @include sp {
+        width: 100%;
+        margin-bottom: 50px;
+      }
+    }
+
+    .hexagon {
+      width: 330px;
+      margin: 23px auto;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      transform: rotate(-90deg);
+      overflow: hidden;
+      cursor: pointer;
+
+      @include sp {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(-90deg);
+      }
+
+      &::before{
+        display: block;
+        padding-top: 86.602540378%;
+        content: '';
+      }
+
+      &__inner-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transform: rotate(60deg);
+      }
+
+      &__inner-2 {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transform: rotate(60deg);
+      }
+
+      &__inner-3 {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-120deg);
+      }
+    }
+
+    .hexagon__inner-image {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background: #555;
+      position: relative;
+      transform: rotate(30deg) scale(1.18);
+
+      h3,img{
+        text-align: center;
+        width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(60deg);
+      }
+    }
+  }
+
+  .return-top{
+    background: $skill_col;
+  }
+}
+
+#modal{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(2,2,2,.7);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s;
+
+  &.active{
+    opacity: 1;
+    pointer-events: auto;
+    transition: .5s .2s;
+  }
+
+  .modal-window{
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    border: .5px solid $skill_col;
+    background: #222;
+
+    .modal-close{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+
+      span{
+        width: 30px;
+        height: 5px;
+        display: inline-block;
+        border-radius: 1px;
+        background: #afafaf;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        &:first-of-type{
+          transform: translate(-50%,-50%) rotate(45deg);
+        }
+
+        &:last-of-type{
+          transform: translate(-50%,-50%) rotate(-45deg);
+        }
+      }
+    }
+
+    .image-wrapper{
+      width: 90%;
+      height: 80%;
+      // margin: 5% 5%;
+      overflow-y: scroll;
+
+      img{
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: none;
+
+        &.show{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+/* ----skill.css---- */
+
+
+
+
+/* ----contact.css---- */
+#contact{
+  margin-top: $margin;
+
+  .box{
+    background: $contact_col;
+  }
+
+  h2{
+    position: fixed;
+    top: 100px;
+    right: 150px;
+    text-shadow: 5px 5px 0 $contact_col;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: .5s;
+
+    @include sp {
+      top: 30px;
+      left: calc(50px + 10vw)
+    }
+  }
+
+  &.active h2{
+    opacity: 1;
+    transform: none;
+    transition: 1s .9s;
+  }
+}
+
+.contact-arrow{
+  width: 60px;
+  height: 60px;
+  border: {
+    top: 10px solid #fff;
+    right: 10px solid #fff;
+  }
+  position: fixed;
+  top: 55%;
+  transform-origin: center;
+  cursor: pointer;
+  z-index: 10;
+
+  @include sp {
+    transform: scale(.5);
+  }
+
+  span{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background: $contact_col;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+  }
+}
+
+#prev{
+  left: 150px;
+  opacity: 0;
+  transform: translateX(50px) rotate(-135deg);
+  transition: .25s;
+  pointer-events: none;
+
+  @include sp {
+    left: 30px;
+  }
+
+  .active &{
+    opacity: 1;
+    transform: translate(0) rotate(-135deg);
+    transition: .8s;
+    pointer-events: auto;
+  }
+}
+
+#next{
+  right: 150px;
+  opacity: 0;
+  transform: translateX(-50px) rotate(45deg);
+  transition: .25s;
+  pointer-events: none;
+
+  @include sp {
+    right: 30px;
+  }
+
+  .active &{
+    opacity: 1;
+    transform: translate(0) rotate(45deg);
+    transition: .8s;
+    pointer-events: auto;
+  }
+}
+
+$slideWidth : 500px;
+$slideHeight : 60vh;
+
+#contact-wrapper{
+  width: $slideWidth;
+  height: $slideHeight;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%,0);
+  transition: .25s;
+  overflow: hidden;
+  pointer-events: none;
+
+  .active &{
+    transform: translate(-50%,-40%);
+    opacity: 1;
+    transition: .8s;
+    pointer-events: auto;
+  }
+}
+
+
+#contact-means{
+  width: $slideWidth * 3;
+  height: $slideHeight;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.panel{
+  width: $slideWidth;
+  height: $slideHeight;
+
+  a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+  }
+}
+
+/* ---- #gmail ---- */
+#gmail{
+  img{
+    width: 25vh;
+    height: 30vh;
+    object-fit: contain;
+    object-position: bottom;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+}
+
+#gmail_1{
+  opacity: .3;
+  transition: .8s;
+
+  .selected &{
+    opacity: 1;
+    transition: 1s .5s;
+  }
+}
+
+#gmail_2{
+  opacity: 0;
+
+  .selected &{
+    opacity: 1;
+    transition: .1s 1.4s;
+  }
+}
+
+/* ---- #twitter ---- */
+.fa-twitter{
+  color: #afafaf;
+  font-size: 15rem;
+  opacity: .3;
+  transition: .8s;
+
+  .selected &{
+    color: #1EA1F2;
+    opacity: 1;
+    transition: 1s .5s;
+  }
+}
+
+.twitter_inner{
+  width: 60%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  @include sp {
+    width: 30%;
+  }
+}
+
+.fa-heart{
+  color: #E0245F;
+  font-size: 8rem;
+}
+
+.fa-retweet{
+  color: #1ABF62;
+  font-size: 8rem;
+}
+
+/* ---- #tell ---- */
+$Degree : 2.5deg;
+
+#tell{
+  @keyframes vibration{
+    0% {
+      transform: rotate(0);
+    }
+
+    10% {
+      transform: rotate($Degree);
+    }
+
+    20% {
+      transform: rotate(-$Degree);
+    }
+
+    30% {
+      transform: rotate($Degree);
+    }
+
+    40% {
+      transform: rotate(-$Degree);
+    }
+
+    50% {
+      transform: rotate($Degree);
+    }
+
+    60% {
+      transform: rotate(-$Degree);
+    }
+
+    70% {
+      transform: rotate($Degree);
+    }
+
+    80% {
+      transform: rotate(-$Degree);
+    }
+
+    90% {
+      transform: rotate($Degree);
+    }
+
+    100% {
+      transform: rotate(-$Degree);
+    }
+  }
+
+  img{
+    height: $slideHeight * 4 / 5;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  &.selected{
+    transform-origin: center 55%;
+    animation: vibration .4s linear 1.75s 2 alternate forwards;
+  }
+}
+
+#screen_1{
+  opacity: .3;
+  transition: .8s;
+
+  .selected &{
+    opacity: 1;
+    transition: 1s .5s;
+  }
+}
+
+#screen_2{
+  opacity: 0;
+
+  .selected &{
+    opacity: 1;
+    transition: .1s 1.4s;
+  }
+}
+
+/* ---- topに戻るボタン ---- */
+#to-top{
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 50%;
+  position: fixed;
+  bottom: -150px;
+  left: 50%;
+  transform: translate(-50%,50%);
+  transition: .25s;
+  pointer-events: none;
+
+  .active &{
+    bottom: 0;
+    transition: .8s;
+    pointer-events: auto;
+    cursor: pointer;
+
+    &:hover{
+      width: 300px;
+      height: 300px;
+      padding: 80px;
+      transition: .3s;
+    }
+  }
+
+  span{
+    color: #111;
+    font: {
+      family: ta-candy, sans-serif;
+      size: 5rem;
+      weight: 400;
+    }
+  }
+}
+/* ----contact.css---- */
