@@ -1,0 +1,608 @@
+@charset "UTF-8";
+p{
+  margin: 0;
+}
+
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+body{
+  margin: 0;
+  font-family: Circular, Helvetica, Arial, sans-serif;
+}
+
+/* header.css */
+header{
+  background-color: #000;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 10;
+}
+
+.header-contents{
+  color: #fff;
+  width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+}
+
+.logo{
+  width: auto;
+  height: 40px;
+  margin: 20px 75px 20px 0;
+  padding: 0;
+}
+
+.header-list{
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header-list a{
+  padding: 28px 20px;
+  display: inline-block;
+}
+
+.header-list a:hover{
+  color: #1ed760;
+}
+
+.header-list .premium{
+  padding: 31px 20px;
+}
+
+.header-list p{
+  margin: 28px 10px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.sign-up{
+  color: #eee;
+}
+
+/* main.css */
+.btn{
+  font-size: 14px;
+  font-weight: 700;
+  width: auto;
+  height: 14px;
+  border-radius: 22px;
+}
+
+.green{
+  padding: 15px 50px;
+  background-color: #1db954;
+  transition: all .5s;
+}
+
+.green:hover{
+  background-color: #1ed760;
+  transition: all .5s;
+}
+
+.white{
+  margin-right: 20px;
+  padding: 13px 48px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  transition: all .5s;
+}
+
+.white:hover{
+  background-color: #fff;
+  color: #000;
+  transition: all .5s;
+}
+/* slider.css */
+#slider{
+  padding-top: 80px;
+  position: relative;
+}
+
+.bx-wrapper {
+  margin: 0 !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+.bx-controls{
+  height: 0;
+}
+
+.panel{
+  color: #503750;
+  width: 100%;
+  height: 505px;
+  background: url(https://www.scdn.co/i/home/jp/hero-bubbles_1217.svg),linear-gradient(100deg,#FDBF58,#F9A838);
+  background-size: cover;
+  background-position: center;
+}
+
+.panel h2{
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  line-height: 80px;
+  margin: 0;
+}
+
+.panel p{
+  font-size: 24px;
+  font-weight: 300;
+  padding-bottom: 55px;
+}
+
+.panel-contents{
+  width:1035px;
+  height:280px;
+  margin: 0 auto;
+  padding-top: 110px;
+  text-align: left;
+}
+
+#prev{
+  width: 36px;
+  height: 36px;
+  background-image: url(https://www.scdn.co/i/home/carousel-chevron.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 350px;
+  left: 10%;
+}
+
+#next{
+  width: 36px;
+  height: 36px;
+  background-image: url(https://www.scdn.co/i/home/carousel-chevron.svg);
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 350px;
+  right: 10%;
+}
+
+.bx-prev{
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+}
+
+.bx-next{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+}
+
+.bx-wrapper{
+  position: relative;
+}
+
+.pager-set{
+  position: absolute;
+  z-index: 9;
+  top:525px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.pager{
+  width: 7.5px;
+  height: 7.5px;
+  margin: 0 1px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #888;
+}
+
+/* article.css */
+.text{
+  color: #fff;
+  margin-left: 10%;
+}
+
+.text h2{
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.text p{
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.heading-1{
+  width: 100%;
+  height: 650px;
+  background-image: url(https://www.scdn.co/i/home/jp/peace.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+
+.free{
+  width: 100%;
+  height: 610px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.screen-1{
+  width: 330px;
+  height: 587px;
+  padding: 80px 14px;
+  margin: 53px 80px 0;
+  border-radius: 40px;
+  background-color: #3c50a2;
+}
+
+.free-contents{
+  padding: 70px 0 0 30px;
+}
+
+.free h3{
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.free h4{
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.free h4 span{
+  font-weight: 700;
+}
+
+.plan-box{
+  font-size: 16px;
+  padding: 15px 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.plan-box li{
+  margin: 15px 0;
+}
+
+.plan-box li:last-child{
+  color: #1db954;
+  font-weight: 700;
+}
+
+.plan-box li:last-child span{
+  font-size: 10px;
+}
+
+.free p{
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  margin: 25px 0 40px;
+}
+
+
+
+.heading-2{
+  width: 100%;
+  height:650px;
+  background-image: url(https://www.scdn.co/i/home/jp/dj.jpg);
+  background-position: center;
+  z-index: 5;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.experience{
+  text-align: center;
+  width: 100%;
+  height: 585px;
+  position: relative;
+}
+
+.screen-2{
+  width: 360px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 0 14px 80px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #ad3092;
+  display: block;
+}
+
+.flex-row1{
+  width: 1070px;
+  height: 260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flex-row2{
+  width: 865px;
+  height: 220px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.about h4{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.about p{
+  font-size: 16px;
+}
+
+.search{
+  padding-bottom: 20px;
+}
+
+.heading-3{
+  width: 100%;
+  height: 650px;
+  background-image: url(https://www.scdn.co/i/home/jp/head-phones.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+
+.enjoying{
+  width: 100%;
+  height: 360px;
+  text-align: center;
+}
+
+.enjoying-contain{
+  color: #222326;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-size: 20px;
+  line-height: 36px;
+  padding: 80px 0 65px;
+}
+
+.heading-4{
+  width: 100%;
+  height: 650px;
+  background-image: url(https://www.scdn.co/i/home/jp/concert.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.message{
+  width: 100%;
+  height: 685px;
+}
+
+.platform{
+  text-align: center;
+  width: 745px;
+  height: 450px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.platform h2{
+  color: #222326;
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.platform h3{
+  color: #222326;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin: 40px 0 25px;
+}
+
+.platform p{
+  font-size: 20px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-weight: 300;
+  text-align: left;
+}
+
+.play{
+  text-align: center;
+  background: url(https://www.scdn.co/i/home/jp/lets-play-bubbles.svg),linear-gradient(135deg,#3556C5,#B1B4A6);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 650px;
+}
+
+.play h1{
+  color: #fff;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 92px;
+  padding-top: 260px;
+}
+
+.play a{
+  color:#000;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  background-color: #fff;
+  padding: 20px 55px;
+  border-radius: 29px;
+}
+
+/* footer.css */
+footer{
+  background-color: #000;
+  width: 100%;
+  height: 570px;
+}
+
+footer a:hover{
+  color: #1ed760;
+}
+
+.footer-contents{
+  width: 1145px;
+  height: 410px;
+  padding-top: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.logo_and_list{
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-list{
+  width: 195px;
+  height: 390px;
+  padding-top: 35px;
+
+}
+
+.footer-list p{
+  color: #919496;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  padding-bottom: 15px;
+}
+
+.footer-list li{
+  padding: 15px 0;
+}
+
+.footer-list a{
+}
+
+
+.infomation{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.infomation a{
+  color: #919496;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  margin-right: 25px;
+}
+
+.footer-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sns-link{
+  width: auto;
+  height:350px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sns-link span{
+  font-size: 25px;
+  padding:15px;
+  margin: 6px;
+  border-radius: 50%;
+  background-color: #212326;
+}
+
+.fab::before{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+.country{
+  color: #919496;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.country a{
+  color: #919496;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+  margin: 2.6px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.country span{
+  padding-right: 10px;
+}
+
+.country p{
+  text-align: right;
+  margin-top: 10px;
+}
+
+.japan{
+  width: 25px;
+  height:auto;
+}

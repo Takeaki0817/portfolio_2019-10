@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+html{
+  background-color: #333;
+}
+
+body{
+  background-image: url(../img/topのコピー.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  width:100%;
+  margin: 0;
+  position: absolute;
+  top:0; left:0;
+  color: #fff;
+}
+
+/* header.css */
+header{
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background-color: #333;
+  z-index: 10;
+}
+
+ header ul{
+  margin:0 ;
+  height: 80px;
+  display: block;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+header li{
+  list-style: none;
+  font-size: 20px;
+  background-color: #333;
+}
+
+.header-list a{
+  display: block;
+  padding: 40px 10px 10px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header-list li:hover{
+  opacity: 0.7;
+  background-color: #222;
+  transition: all 0.5s;
+}
+
+#menu{
+  float: right;
+  font-size: 40px;
+  padding: 30px 20px 10px;
+  display:none;
+}
+
+h1{
+  float: left;
+  font-size: 40px;
+  font-family: impact;
+  margin-left: 15px;
+}
+
+/* main.css */
+main{
+  margin-top: 80px;
+  width:100%;
+}
+
+main h2{
+  padding-top: 80px;
+  margin-top: -80px;
+  font-size: 35px;
+  padding-left: 5px;
+}
+
+.description{
+  padding-left: 15px;
+}
+
+.cont{
+  display: block;
+  width: 60%;
+  height:600px;
+  background-color: rgba(20%,20%,20%,0.8);
+  opacity: 0;
+  transform: translateX(-100px);
+
+}
+
+.name{
+  margin-right: auto;
+}
+
+dt{
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+dd{
+  line-height: 40px;
+}
+
+.hobby{
+  margin-left: auto;
+}
+
+.hobby p{
+  margin-left: 15px;
+  line-height: 30px;
+
+}
+
+.dream{
+  margin-right: auto;
+}
+
+.dream p{
+  padding-left: 20px;
+  padding-bottom: 17px;
+  line-height: 30px;
+
+}
+
+.reason{
+  margin-left: auto;
+}
+
+/* footer.css */
+
+footer{
+  width: 100%
+  height:400px;
+  background-color: #800000;
+}
+
+footer p{
+  margin:0;
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+  padding-top: 30px;
+}
+
+footer a{
+  display: block;
+  text-align: right;
+  padding:25px;
+  width: 60px;
+  margin-left: auto;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover{
+  opacity: 0.7;
+  background-color: #a00000;
+  transition: all 0.5s;
+}
+
+/* animation.css */
+
+.fadein{
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.fadeout{
+  transform: translateX(-100px);
+  transition: all 0.5s;
+}

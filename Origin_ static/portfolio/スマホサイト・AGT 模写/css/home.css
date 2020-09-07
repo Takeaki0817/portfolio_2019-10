@@ -1,0 +1,337 @@
+@charset "UTF-8";
+*{
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, verdana, "Lucida Grande", Arial, Meiryo, "Hiragino Kaku Gothic Pro", "Trebuchet MS", Helvetica, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* --header.css-- */
+header{
+  color: #131313;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  width: 100%;
+  height: 94px;
+  background: #EFEFEF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo{
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.header-logo h1{
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 13px;
+  letter-spacing: 1px;
+}
+
+.header-logo img{
+  height: 35px;
+  margin-left: 50px;
+}
+
+.header-list{
+  display: flex;
+  flex-direction: row;
+}
+
+.header-list a{
+  color: #131313;
+  font-size: 15px;
+  font-family: Raleway, sans-serif;
+  line-height: 91px;
+  display: inline-block;
+  margin-right: 50px;
+  box-sizing: border-box;
+}
+
+.home{
+  border-bottom: 4px solid #131313;
+}
+
+.header-list a:not(.home):hover{
+  border-bottom: 4px solid #131313;
+}
+
+
+/* --main.css-- */
+/* --page-wrapper.css-- */
+main{
+  /* padding: 70px 0; */
+}
+
+.page-wrapper{
+  width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.page-box{
+  width: 320px;
+  height: auto;
+  margin: 70px 0 35px;
+  text-align: center;
+}
+
+.page-box a{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.page{
+  width: 320px;
+  height: 570px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.page img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.page-box h2{
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  width: auto;
+  height: 21px;
+  display: inline-block;
+  position: relative;
+}
+
+.stripe{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(http://agtsmartphonedesign.com/wordpress/wp-content/uploads/2016/07/bg_border_01.gif);
+}
+
+
+/* --pagenavi.css-- */
+.pagenavi{
+  width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.pagenavi a{
+  color: #101010;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 2.5px;
+  display: inline-block;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.pagenavi .hide{
+  display: none;
+}
+
+.pagenavi .this-page{
+  pointer-events: none;
+  border: 2px solid #000;
+}
+
+
+/* --sns.css-- */
+.sns{
+  width: 1040px;
+  height: 135px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #DBDBDB;
+  position: relative;
+}
+
+.sns a{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  width: auto;
+  height: 18px;
+  padding: 0 5px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.hatena{
+  background: #00A4DE;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.hatena-img{
+  height: 20px;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+}
+
+.hatena:hover{
+  background: #0091c5;
+}
+
+.facebook{
+  background: #4267B2;
+  margin-right: 10px;
+}
+
+.facebook:hover{
+  background: #365899;
+}
+
+.twitter{
+  background: #1B95E0;
+}
+
+.twitter:hover{
+  background: #0c7abf;
+}
+
+.sns > .balloon{
+  color: #000;
+  line-height: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 1px solid #8799A6;
+  border-radius: 2px;
+  position: relative;
+}
+
+.balloon::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -5px;
+  border: 5px solid transparent;
+  border-right: 5px solid #fff;
+  z-index: 2;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  margin-top: -6px;
+  border: 6px solid transparent;
+  border-right: 6px solid #8799A6;
+  z-index: 1;
+}
+
+.balloon:hover{
+  text-decoration: underline;
+}
+
+.scroll-top{
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  object-position: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+.scroll-top:hover{
+  object-position: top;
+}
+
+
+/* --advertisements.css-- */
+.advertisements{
+  width: 1040px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advertisements a{
+  width: 465px;
+  height: 60px;
+  display: inline-block;
+  background: red;
+}
+
+
+/* --footer.css-- */
+footer{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background: #EFEFEF;
+  position: relative;
+}
+
+.footer-decoration{
+  width: 50px;
+  height: 195px;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  background: #EFEFEF;
+}
+
+.footer-list{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-list a{
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: Raleway, sans-serif;
+  line-height: 70px;
+  width: auto;
+  height: 100%;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.footer-list a:hover{
+  text-decoration: underline;
+}
+
+.footer-logo{
+  height: 15px;
+  margin-right: 55px;
+}
